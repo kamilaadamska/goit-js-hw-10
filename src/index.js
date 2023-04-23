@@ -25,7 +25,10 @@ searchBoxEl.addEventListener(
         }
         renderCountryList(countries);
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        console.log(error);
+        Notify.failure('Oops, there is no country with that name');
+      });
   }, DEBOUNCE_DELAY)
 );
 
