@@ -12,6 +12,8 @@ searchBoxEl.addEventListener(
   'input',
   debounce(() => {
     if (!searchBoxEl.value) {
+      countryListEl.innerHTML = '';
+      countryInfoEl.innerHTML = '';
       return;
     }
 
