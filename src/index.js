@@ -6,6 +6,7 @@ import { Notify } from 'notiflix';
 const DEBOUNCE_DELAY = 300;
 const searchBoxEl = document.getElementById('search-box');
 const countryListEl = document.querySelector('.country-list');
+const countryInfoEl = document.querySelector('.country-info');
 
 searchBoxEl.addEventListener(
   'input',
@@ -40,4 +41,16 @@ function renderCountryList(countries) {
     })
     .join('');
   countryListEl.innerHTML = markup;
+
+  if (countries.length === 1) {
+    const languagesArr = Object.values(countries[0].languages).join(', ');
+
+    countryInfoEl.innerHTML = `<ul>
+    <li>Capital: ${countries[0].capital}<li>
+    <li>Population: ${countries[0].population}<li>
+    <li>Languages: ${languagesArr}<li>
+    </ul>`;
+  } else {
+    countryInfoEl.innerHTML = '';
+  }
 }
