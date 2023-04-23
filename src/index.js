@@ -33,7 +33,7 @@ function renderCountryList(countries) {
   const markup = countries
     .map(country => {
       return `
-          <li class="list-item">
+          <li class="country-item">
           <img src="${country.flags.svg}" alt="A flag" width="45px" />
           <span>${country.name.official}</span>
           </li>
@@ -46,9 +46,9 @@ function renderCountryList(countries) {
     const languagesArr = Object.values(countries[0].languages).join(', ');
 
     countryInfoEl.innerHTML = `<ul>
-    <li>Capital: ${countries[0].capital}<li>
-    <li>Population: ${countries[0].population}<li>
-    <li>Languages: ${languagesArr}<li>
+    <li><span>Capital:</span> ${countries[0].capital}<li>
+    <li><span>Population:</span> ${countries[0].population}<li>
+    <li><span>Languages:</span> ${languagesArr}<li>
     </ul>`;
   } else {
     countryInfoEl.innerHTML = '';
