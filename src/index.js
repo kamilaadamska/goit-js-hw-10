@@ -19,6 +19,7 @@ searchBoxEl.addEventListener(
       .then(countries => {
         if (countries.length > 10) {
           countryListEl.innerHTML = '';
+          countryInfoEl.innerHTML = '';
           return Notify.info(
             'Too many matches found. Please enter a more specific name.'
           );
